@@ -63,6 +63,21 @@ input {
     margin: 0;
 }
 
+textarea {
+    border-radius: 20px;
+    border: 0px solid #0C056D;
+    background-color: #0C056D;
+    color: #F25D9C;
+    font-family: Rubik;
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 ::-webkit-input-placeholder {
     color: #F25D9C;
 }
