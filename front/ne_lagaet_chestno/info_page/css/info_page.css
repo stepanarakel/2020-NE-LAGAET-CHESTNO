@@ -1,0 +1,15 @@
+.middle {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    text-align: center;
+}
+
+.message {
+    grid-row: 2/3;
+}
+
+.text {
+    color: #F25D9C;
+    font-family: press_start_2p_rus;
+    margin: 15px 0 15px 0;
+}
