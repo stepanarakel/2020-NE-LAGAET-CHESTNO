@@ -17,19 +17,11 @@ namespace NE_LAGAET_CHESTNO.Models
         /// <summary>
         /// Имя в соц. сети
         /// </summary>
-        public string Accaunt { get; set; }
-        /// <summary>
-        /// Ссылка на соц. сеть
-        /// </summary>
-        public int SocialNetworkId { get; set; }
+        public string Account { get; set; }
         /// <summary>
         /// Соц. сеть
         /// </summary>
         public SocialNetwork SocialNetwork { get; set; }
-        /// <summary>
-        /// Ссылка на город
-        /// </summary>
-        public int CityId { get; set; }
         /// <summary>
         /// Город
         /// </summary>

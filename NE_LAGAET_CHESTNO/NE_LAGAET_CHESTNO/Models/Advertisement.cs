@@ -15,10 +15,6 @@ namespace NE_LAGAET_CHESTNO.Models
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// Ссылка на смартфон
-        /// </summary>
-        public int PhoneId { get; set; }
-        /// <summary>
         /// Cмартфон
         /// </summary>
         public Phone Phone { get; set; }
@@ -34,10 +30,6 @@ namespace NE_LAGAET_CHESTNO.Models
         /// Смартфон взамен
         /// </summary>
         public string ReplacementPhone { get; set; }
-        /// <summary>
-        /// Ссылка на контакты
-        /// </summary>
-        public int ContactId { get; set; }
         /// <summary>
         /// Контакты
         /// </summary>
