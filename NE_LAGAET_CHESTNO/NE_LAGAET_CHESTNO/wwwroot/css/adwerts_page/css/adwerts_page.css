@@ -1,0 +1,98 @@
+.middle {
+    background: linear-gradient(to top, #0C056D, #B61AAE);
+    border: 4px solid #F25D9C;
+    margin: 0 200px 0 200px;
+    padding: 30px 50px 30px 50px;
+    margin-bottom: 100px;
+}
+
+.middle,
+.loacaion,
+.search {
+    border-radius: 20px;
+}
+
+.loacaion,
+.search,
+#search {
+    background-color: #0C056D;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    height: 40px;
+}
+
+.loacaion {
+    grid-column: 1/2;
+}
+
+.search {
+    grid-column: 3/4;
+}
+
+#send_adwert {
+    grid-column: 5/7;
+}
+
+.loacaion,
+.search {
+    padding: 7px 8px 7px 8px;
+    position: relative;
+}
+
+.city {
+    position: absolute;
+    left: 40px;
+    top: 7px;
+}
+
+#request {
+    position: absolute;
+    left: 8px;
+    top: 7px;
+}
+
+#search .ico {
+    background-image: url('/adwerts_page/icons/search.svg');
+    background-repeat: no-repeat;
+}
+
+#search {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+}
+
+
+/**/
+
+.adwerts {
+    position: relative;
+}
+
+.adwert_title {
+    margin-top: 20px;
+    background-color: #F25D9C;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 20px 5px 20px;
+    color: #0C056D;
+    font-size: 22px;
+}
+
+.adwert_description {
+    position: relative;
+    background-color: #0C056D;
+    border-radius: 0 0 20px 20px;
+    border: 2px solid #F25D9C;
+    padding: 10px 20px 10px 20px;
+    color: #F25D9C;
+    font-size: 22px;
+}
+
+#response {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}

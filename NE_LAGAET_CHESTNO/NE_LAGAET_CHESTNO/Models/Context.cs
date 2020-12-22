@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace NE_LAGAET_CHESTNO.Models
 {
     /// <summary>
-    /// КОНТЕКСТ БЕЗЫ ДАННЫХ
+    /// КОНТЕКСТ БАЗЫ ДАННЫХ
     /// </summary>
     public class Context : DbContext
     {

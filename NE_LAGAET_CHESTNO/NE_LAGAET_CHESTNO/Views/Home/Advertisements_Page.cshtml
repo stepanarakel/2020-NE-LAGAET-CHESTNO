@@ -9,9 +9,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" tyae="text/css" href="css/style.css" />
-    <link rel="stylesheet" tyae="text/css" href="css/header.css" />
-    <link rel="stylesheet" tyae="text/css" href="adwerts_page/css/adwerts_page.css" />-->
+    <link rel="stylesheet" tyae="text/css" href="~/css/style.css" /> <!--~/css/-->
+    <link rel="stylesheet" tyae="text/css" href="~/css/header.css" />
+    <link rel="stylesheet" tyae="text/css" href="~/css/adwerts_page/css/adwerts_page.css" />
     <title>NE LAGAET CHESTNO</title>
 </head>
 
@@ -22,7 +22,7 @@
     <div class="middle ">
         <div class="navigation">
             <div class="loacaion">
-                <img src="adwerts_page/icons/pin.svg">
+                <img src="~/css/adwerts_page/icons/pin.svg">
                 <select class="city">
                     @foreach (City city in Model.Cities)
                     {
@@ -32,7 +32,7 @@
             </div>
             <div class="search">
                 <input id="request" type="text" placeholder="ПОИСК">
-                <button id="search"><img src="adwerts_page/icons/search.svg"></button>
+                <button id="search"><img src="~/css/adwerts_page/icons/search.svg"></button>
             </div>
             <button id="send_adwert">Оставить объявление</button>
         </div>

@@ -11,16 +11,10 @@ namespace NE_LAGAET_CHESTNO.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         /// <summary>
         /// Контекст БД
         /// </summary>
         Context db;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public HomeController(Context context)
         {
