@@ -8,7 +8,7 @@ namespace NE_LAGAET_CHESTNO.Models
     /// <summary>
     /// Контакты
     /// </summary>
-    public class Contacts
+    public class Contact
     {
         /// <summary>
         /// id контактов

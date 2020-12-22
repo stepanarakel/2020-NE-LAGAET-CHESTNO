@@ -37,11 +37,11 @@ namespace NE_LAGAET_CHESTNO.Models
         /// <summary>
         /// Ссылка на контакты
         /// </summary>
-        public int ContactsId { get; set; }
+        public int ContactId { get; set; }
         /// <summary>
         /// Контакты
         /// </summary>
-        public Contacts Contacts { get; set; }
+        public Contact Contact { get; set; }
         /// <summary>
         /// Дата объявления
         /// </summary>

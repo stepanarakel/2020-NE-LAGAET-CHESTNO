@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NE_LAGAET_CHESTNO.Models;   // пространство имен моделей
+using Microsoft.EntityFrameworkCore; // пространство имен EntityFramework
 
 namespace NE_LAGAET_CHESTNO
 {
@@ -23,6 +25,8 @@ namespace NE_LAGAET_CHESTNO
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<Context>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
         }
 

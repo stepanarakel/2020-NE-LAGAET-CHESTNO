@@ -49,7 +49,7 @@ namespace NE_LAGAET_CHESTNO.Models
         /// <summary>
         /// Объём оперативной памяти смартфона
         /// </summary>
-        public int RAN { get; set; }
+        public int RAM { get; set; }
         /// <summary>
         /// Объём постоянной памяти смартфона
         /// </summary>
