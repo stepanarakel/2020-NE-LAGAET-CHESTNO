@@ -40,7 +40,6 @@ textarea {
 
 ._description {
     position: relative;
-    /*background-color: #0C056D;*/
     border-radius: 0 0 20px 20px;
     border: 2px solid #F25D9C;
     padding: 0 10px 10px 10px;
@@ -86,8 +85,23 @@ textarea {
 }
 
 .final_form ._description {
-    padding-top: 10px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#time_of_use,
+#create {
+    grid-row: 1/2;
+}
+
+#time_of_use {
+    grid-column: 1/2;
+    max-width: 312px;
+}
+
+#create {
+    grid-column: 2/3;
+    margin-top: 10px;
 }
 
 .characteristics_form,
