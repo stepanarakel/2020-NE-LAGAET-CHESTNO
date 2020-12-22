@@ -3,15 +3,16 @@
     //ViewData["Title"] = "Home Page";
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" tyae="text/css" href="~/css/style.css" /> <!--~/css/-->
+    <link rel="stylesheet" tyae="text/css" href="~/css/style.css" />
     <link rel="stylesheet" tyae="text/css" href="~/css/header.css" />
-    <link rel="stylesheet" tyae="text/css" href="~/css/adwerts_page/css/adwerts_page.css" />
+    <link rel="stylesheet" tyae="text/css" href="~/css/adverts_page/css/adverts_page.css" />
     <title>NE LAGAET CHESTNO</title>
 </head>
 
@@ -22,7 +23,7 @@
     <div class="middle ">
         <div class="navigation">
             <div class="loacaion">
-                <img src="~/css/adwerts_page/icons/pin.svg">
+                <img src="~/css/adverts_page/icons/pin.svg">
                 <select class="city">
                     @foreach (City city in Model.Cities)
                     {
@@ -32,37 +33,35 @@
             </div>
             <div class="search">
                 <input id="request" type="text" placeholder="ПОИСК">
-                <button id="search"><img src="~/css/adwerts_page/icons/search.svg"></button>
+                <button id="search"><img src="~/css/adverts_page/icons/search.svg"></button>
             </div>
-            <button id="send_adwert">Оставить объявление</button>
+            <button id="send_advert">Оставить объявление</button>
         </div>
-        <div class="adwerts">
-            <div class="adwert">
-                @foreach (Advertisement advert in Model.Advertisements)
-                {
-                    <div class="adwert_title">
+        <div class="adverts">
+            @foreach (Advertisement advert in Model.Advertisements)
+            {
+                <div class="advert">
+                    <div class="advert_title">
                         <p>МЕНЯЮ: @(advert.Phone.Brand + advert.Phone.Model) НА: @advert.ReplacementPhone </p>
                     </div>
-                    <div class="adwert_description">
+                    <div class="advert_description">
                         <p>ОС: @advert.Phone.OS , прошивка: @advert.Phone.Firmware, дисплей: @advert.Phone.Display , ёмкость батареи: @advert.Phone.BatteryCapacity mAh, мощность зарядки: @advert.Phone.ChargePower Вт, ОЗУ: @advert.Phone.RAM GB, ПЗУ: @advert.Phone.ROM GB, цвет: @advert.Phone.Color</p>
                         @if ((@advert.TimeOfUse - (@advert.TimeOfUse - 1)) == 1)
                         {
                             <p>Время пользования: @advert.TimeOfUse месяц</p>
                         }
-                        else if ((@advert.TimeOfUse - (@advert.TimeOfUse - 2)) == 2 ||
-                            (@advert.TimeOfUse - (@advert.TimeOfUse - 3)) == 3 ||
-                            (@advert.TimeOfUse - (@advert.TimeOfUse - 4)) == 4)
+                        else if ((@advert.TimeOfUse - (@advert.TimeOfUse - 2)) == 2 || (@advert.TimeOfUse - (@advert.TimeOfUse - 3)) == 3 || (@advert.TimeOfUse - (@advert.TimeOfUse - 4)) == 4)
                         {
                             <p>Время пользования: @advert.TimeOfUse месяца</p>
-                        }
+                            }
                         else
                         {
                             <p>Время пользования: @advert.TimeOfUse месяцев</p>
                         }
                         <button id="response">Откликнуться</button>
                     </div>
-                }
-            </div>
+                </div>
+             }
         </div>
     </div>
 </body>

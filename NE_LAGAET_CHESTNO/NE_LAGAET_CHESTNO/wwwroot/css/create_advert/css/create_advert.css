@@ -1,0 +1,110 @@
+.middle {
+    background: linear-gradient(to top, #0C056D, #B61AAE);
+    border: 4px solid #F25D9C;
+    margin: 0 200px 0 200px;
+    padding: 30px 50px 30px 50px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 2fr 20px 3fr;
+}
+
+.instruction {
+    text-align: center;
+    font-size: 20px;
+    font-family: press_start_2p_rus;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    color: #0C056D;
+}
+
+input,
+textarea {
+    padding: 5px 7px 5px 7px;
+    margin-top: 10px;
+    max-width: 242px;
+}
+
+textarea {
+    resize: none;
+}
+
+._title {
+    margin-top: 20px;
+    background-color: #F25D9C;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 20px 5px 20px;
+    color: #0C056D;
+    font-size: 36px;
+}
+
+._description {
+    position: relative;
+    border-radius: 0 0 20px 20px;
+    border: 2px solid #F25D9C;
+    padding: 0 10px 10px 10px;
+    color: #F25D9C;
+}
+
+.contact_form {
+    grid-row: 2/3;
+}
+
+.addit_info_form {
+    grid-row: 3/5;
+}
+
+.addit_info_form #other {
+    height: 79px;
+}
+
+.contact_form,
+.addit_info_form {
+    grid-column: 1/2;
+}
+
+.characteristics_form {
+    grid-row: 2/4;
+}
+
+.characteristics_form ._description {
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+}
+
+.col1 {
+    grid-column: 1/2;
+}
+
+.col2 {
+    grid-column: 3/4;
+}
+
+.final_form {
+    grid-row: 4/5;
+}
+
+.final_form ._description {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#time_of_use,
+#create {
+    grid-row: 1/2;
+}
+
+#time_of_use {
+    grid-column: 1/2;
+    max-width: 312px;
+}
+
+#create {
+    grid-column: 2/3;
+    margin-top: 10px;
+}
+
+.characteristics_form,
+.final_form {
+    grid-column: 3/4;
+}

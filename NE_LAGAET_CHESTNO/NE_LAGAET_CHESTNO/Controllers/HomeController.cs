@@ -27,6 +27,9 @@ namespace NE_LAGAET_CHESTNO.Controllers
             return View(advertisements_page);
         }
 
+
+
+
         public IActionResult Privacy()
         {
             return View();

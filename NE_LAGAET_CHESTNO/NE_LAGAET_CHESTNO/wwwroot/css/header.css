@@ -1,0 +1,14 @@
+header {
+    height: 100px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.title {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    font-family: press_start_2p_rus;
+    color: #0C056D;
+    font-size: 40px;
+}
