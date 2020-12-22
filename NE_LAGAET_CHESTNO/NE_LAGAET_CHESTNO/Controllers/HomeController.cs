@@ -12,15 +12,25 @@ namespace NE_LAGAET_CHESTNO.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        /// <summary>
+        /// Контекст БД
+        /// </summary>
+        Context db;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public HomeController(Context context)
         {
-            return View();
+            this.db = context;
+        }
+
+        public IActionResult Advertisements_Page()
+        {
+            AdvertsPage advertisements_page = new AdvertsPage(this.db.Cities.ToList(), this.db.Advertisements.ToList());
+            return View(advertisements_page);
         }
 
         public IActionResult Privacy()
