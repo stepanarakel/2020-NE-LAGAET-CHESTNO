@@ -10,11 +10,11 @@
 
 /**/
 
-.adwerts {
+.adverts {
     position: relative;
 }
 
-.adwert_title {
+.advert_title {
     background-color: #F25D9C;
     border-radius: 20px 20px 0 0;
     padding: 10px 20px 5px 20px;
@@ -22,7 +22,7 @@
     font-size: 22px;
 }
 
-.adwert_description {
+.advert_description {
     position: relative;
     background-color: #0C056D;
     border-radius: 0 0 20px 20px;
