@@ -27,8 +27,22 @@ namespace NE_LAGAET_CHESTNO.Controllers
             return View(advertisements_page);
         }
 
-
-
+        public IActionResult Page_404()
+        {
+            return View();
+        }
+        public IActionResult Advertisement_Page()
+        {
+            return View();
+        }
+        public IActionResult Create_Advert_Page()
+        {
+            return View();
+        }
+        public IActionResult Create_Page()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
