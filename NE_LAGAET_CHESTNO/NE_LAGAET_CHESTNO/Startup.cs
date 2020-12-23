@@ -55,6 +55,7 @@ namespace NE_LAGAET_CHESTNO
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Advertisements_Page}/{id?}");
+                    //pattern: "{controller=Home}/{action=Page_404}/{id?}");
             });
         }
     }

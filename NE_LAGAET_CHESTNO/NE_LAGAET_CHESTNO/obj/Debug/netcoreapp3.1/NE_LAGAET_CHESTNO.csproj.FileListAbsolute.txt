@@ -114,5 +114,5 @@ D:\myGit\2020-NE-LAGAET-CHESTNO\NE_LAGAET_CHESTNO\NE_LAGAET_CHESTNO\obj\Debug\ne
 D:\myGit\2020-NE-LAGAET-CHESTNO\NE_LAGAET_CHESTNO\NE_LAGAET_CHESTNO\obj\Debug\netcoreapp3.1\NE_LAGAET_CHESTNO.csprojAssemblyReference.cache
 D:\myGit\2020-NE-LAGAET-CHESTNO\NE_LAGAET_CHESTNO\NE_LAGAET_CHESTNO\obj\Debug\netcoreapp3.1\Razor\Views\Home\page_404.cshtml.g.cs
 D:\myGit\2020-NE-LAGAET-CHESTNO\NE_LAGAET_CHESTNO\NE_LAGAET_CHESTNO\obj\Debug\netcoreapp3.1\Razor\Views\Home\Advertisement_Page.cshtml.g.cs
-D:\myGit\2020-NE-LAGAET-CHESTNO\NE_LAGAET_CHESTNO\NE_LAGAET_CHESTNO\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create_Advert_Page.cshtml.g.cs
 D:\myGit\2020-NE-LAGAET-CHESTNO\NE_LAGAET_CHESTNO\NE_LAGAET_CHESTNO\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create_Page.cshtml.g.cs
+D:\myGit\2020-NE-LAGAET-CHESTNO\NE_LAGAET_CHESTNO\NE_LAGAET_CHESTNO\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create_Advert_Page.cshtml.g.cs

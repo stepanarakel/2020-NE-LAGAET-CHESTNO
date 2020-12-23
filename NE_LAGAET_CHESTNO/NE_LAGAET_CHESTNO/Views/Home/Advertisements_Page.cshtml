@@ -10,9 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" tyae="text/css" href="~/css/style.css" />
-    <link rel="stylesheet" tyae="text/css" href="~/css/header.css" />
-    <link rel="stylesheet" tyae="text/css" href="~/css/adverts_page/css/adverts_page.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/adverts_page/css/adverts_page.css" />
     <title>NE LAGAET CHESTNO</title>
 </head>
 
@@ -35,7 +35,7 @@
                 <input id="request" type="text" placeholder="ПОИСК">
                 <button id="search"><img src="~/css/adverts_page/icons/search.svg"></button>
             </div>
-            <button id="send_advert">Оставить объявление</button>
+            <button id="send_advert">@Html.ActionLink("Оставить объявление", "Create_Advert_Page")</button>
         </div>
         <div class="adverts">
             @foreach (Advertisement advert in Model.Advertisements)

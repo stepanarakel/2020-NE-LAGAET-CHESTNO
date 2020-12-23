@@ -52,6 +52,11 @@ button:hover {
     background-color: #B61AAE;
 }
 
+button a {
+    color: #0C056D !important;
+    text-decoration: none
+}
+
 input {
     border-radius: 20px;
     border: 0px solid #0C056D;
