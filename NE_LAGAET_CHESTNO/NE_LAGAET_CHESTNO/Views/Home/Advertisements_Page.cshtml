@@ -1,5 +1,4 @@
-﻿@model AdvertsPage
-@{
+﻿@{
     //ViewData["Title"] = "Home Page";
     Layout = null;
 }
@@ -25,7 +24,7 @@
             <div class="loacaion">
                 <img src="~/css/adverts_page/icons/pin.svg">
                 <select class="city">
-                    @foreach (City city in Model.Cities)
+                    @foreach (City city in ViewBag.Cities)
                     {
                         <option>@city.Name</option>
                     }
@@ -38,7 +37,7 @@
             <button id="send_advert">@Html.ActionLink("Оставить объявление", "Create_Advert_Page")</button>
         </div>
         <div class="adverts">
-            @foreach (Advertisement advert in Model.Advertisements)
+            @foreach (Advertisement advert in ViewBag.Advertisements)
             {
                 <div class="advert">
                     <div class="advert_title">
@@ -58,7 +57,7 @@
                         {
                             <p>Время пользования: @advert.TimeOfUse месяцев</p>
                         }
-                        <button id="response">Откликнуться</button>
+                        <button id="response">@Html.ActionLink("Откликнуться", "Advertisement_Page", advert.Id)</button>
                     </div>
                 </div>
              }

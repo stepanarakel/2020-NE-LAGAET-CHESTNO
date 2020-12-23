@@ -23,16 +23,25 @@ namespace NE_LAGAET_CHESTNO.Controllers
 
         public IActionResult Advertisements_Page()
         {
-            AdvertsPage advertisements_page = new AdvertsPage(db.Cities.ToList(), db.Advertisements.ToList());
-            return View(advertisements_page);
+            ViewBag.SocialNetworks = db.SocialNetworks.ToList();
+            ViewBag.Cities = db.Cities.ToList();
+            ViewBag.Phones = db.Phones.ToList();
+            ViewBag.Contacts = db.Contacts.ToList();
+            ViewBag.Advertisements = db.Advertisements.ToList();
+            return View();
         }
 
         public IActionResult Page_404()
         {
             return View();
         }
-        public IActionResult Advertisement_Page()
+        public IActionResult Advertisement_Page(int? id)
         {
+            ViewBag.SocialNetworks = db.SocialNetworks.ToList();
+            ViewBag.Cities = db.Cities.ToList();
+            ViewBag.Phones = db.Phones.ToList();
+            ViewBag.Contacts = db.Contacts.ToList();
+            ViewBag.Advertisements = db.Advertisements.ToList();
             return View();
         }
 
