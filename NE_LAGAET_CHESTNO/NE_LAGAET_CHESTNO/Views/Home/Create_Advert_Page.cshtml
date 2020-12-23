@@ -18,16 +18,19 @@
     <header>
         <a class="title">NE LAGAET CHESTNO</a>
     </header>
-    <div class="middle ">
-        <p class="instruction">Заполните все поля и нажмите ОПУБЛИКОВАТЬ</p>
+    <form class="middle" method="post">
+        <div class="instruction">
+            <p>Заполните все поля и нажмите ОПУБЛИКОВАТЬ</p>
+            <p>Все поля обязательны, кроме ПРОЧЕЕ!</p>
+        </div>
         <div class="contact_form">
             <div class="_title">
                 <p>Контакты</p>
             </div>
             <div class="_description">
-                <input id="website" type="text" placeholder="Социальня сеть">
-                <input id="name" type="text" placeholder="Имя/id/nick">
-                <input id="city" type="text" placeholder="Город">
+                <input id="website" name="website" type="text" placeholder="Социальня сеть">
+                <input id="name" name="name" type="text" placeholder="Имя/id/nick">
+                <input id="city" name="city" type="text" placeholder="Город">
             </div>
         </div>
         <div class="characteristics_form">
@@ -35,16 +38,16 @@
                 <p>Характеристики вашего устройства</p>
             </div>
             <div class="_description">
-                <input class="col1" id="brand" type="text" placeholder="Производитель">
-                <input class="col2" id="model" type="text" placeholder="Модель">
-                <input class="col1" id="os" type="text" placeholder="ОС">
-                <input class="col2" id="firmware" type="text" placeholder="Прошивка">
-                <input class="col1" id="display" type="text" placeholder="Тип дисплея">
-                <input class="col2" id="color" type="text" placeholder="Цвет">
-                <input class="col1" id="battery_capacity" type="number" placeholder="Ёмкость батареи">
-                <input class="col2" id="charge_power" type="number" placeholder="Мощномть зарядка">
-                <input class="col1" id="ram" type="number" placeholder="Объём ОЗУ">
-                <input class="col2" id="rom" type="number" placeholder="Объём ПЗУ">
+                <input class="col1" id="brand" name="brand" type="text" placeholder="Производитель">
+                <input class="col2" id="model" name="model" type="text" placeholder="Модель">
+                <input class="col1" id="os" name="os" type="text" placeholder="ОС">
+                <input class="col2" id="firmware" name="firmware" type="text" placeholder="Прошивка">
+                <input class="col1" id="display" name="display" type="text" placeholder="Тип дисплея">
+                <input class="col2" id="color" name="color" type="text" placeholder="Цвет">
+                <input class="col1" id="battery_capacity" name="battery_capacity" type="number" placeholder="Ёмкость батареи">
+                <input class="col2" id="charge_power" name="charge_power" type="number" placeholder="Мощномть зарядка">
+                <input class="col1" id="ram" name="ram" type="number" placeholder="Объём ОЗУ">
+                <input class="col2" id="rom" name="rom" type="number" placeholder="Объём ПЗУ">
             </div>
         </div>
         <div class="addit_info_form">
@@ -52,8 +55,8 @@
                 <p>Доп Инфа</p>
             </div>
             <div class="_description">
-                <textarea id="replacement_phone" type="text" placeholder="На какое устройство вы хотите обменяться"></textarea>
-                <textarea id="other" type="text" placeholder="Прочее: не обязательно для заполнения"></textarea>
+                <textarea id="replacement_phone" name="replacement_phone" type="text" placeholder="На какое устройство вы хотите обменяться"></textarea>
+                <textarea id="other" name="other" type="text" placeholder="Прочее: не обязательно для заполнения"></textarea>
             </div>
         </div>
         <div class="final_form">
@@ -61,11 +64,11 @@
                 <p>Финальный штрих</p>
             </div>
             <div class="_description">
-                <input id="time_of_use" type="number" placeholder="Время пользования (месяцы)">
-                <button id="create">ОПУБЛИКОВАТЬ</button>
+                <input id="time_of_use" name="time_of_use" type="number" placeholder="Время пользования (месяцы)">
+                <button id="create" type="submit">ОПУБЛИКОВАТЬ</button>
             </div>
         </div>
-    </div>
+    </form>
 </body>
 
 </html>

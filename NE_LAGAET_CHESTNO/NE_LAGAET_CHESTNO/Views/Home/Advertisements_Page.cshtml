@@ -42,7 +42,7 @@
             {
                 <div class="advert">
                     <div class="advert_title">
-                        <p>МЕНЯЮ: @(advert.Phone.Brand + advert.Phone.Model) НА: @advert.ReplacementPhone </p>
+                        <p>МЕНЯЮ: @advert.Phone.Brand.ToString() @advert.Phone.Model.ToString() НА: @advert.ReplacementPhone </p>
                     </div>
                     <div class="advert_description">
                         <p>ОС: @advert.Phone.OS , прошивка: @advert.Phone.Firmware, дисплей: @advert.Phone.Display , ёмкость батареи: @advert.Phone.BatteryCapacity mAh, мощность зарядки: @advert.Phone.ChargePower Вт, ОЗУ: @advert.Phone.RAM GB, ПЗУ: @advert.Phone.ROM GB, цвет: @advert.Phone.Color</p>
