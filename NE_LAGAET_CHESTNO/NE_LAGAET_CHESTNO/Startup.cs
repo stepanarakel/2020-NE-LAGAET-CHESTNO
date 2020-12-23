@@ -35,7 +35,7 @@ namespace NE_LAGAET_CHESTNO
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+              app.UseDeveloperExceptionPage();
             }
             else
             {

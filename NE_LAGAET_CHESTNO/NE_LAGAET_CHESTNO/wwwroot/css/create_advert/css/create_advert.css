@@ -9,14 +9,18 @@
     grid-template-columns: 2fr 20px 3fr;
 }
 
-.instruction {
+.instruction {    
+    grid-column: 1/4;
+    grid-row: 1/2;    
+}
+
+.instruction p {
     text-align: center;
     font-size: 20px;
     font-family: press_start_2p_rus;
-    grid-column: 1/4;
-    grid-row: 1/2;
     color: #0C056D;
 }
+
 
 input,
 textarea {

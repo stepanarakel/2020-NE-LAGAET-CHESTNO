@@ -21,9 +21,9 @@ namespace NE_LAGAET_CHESTNO.Controllers
             this.db = context;
         }
 
-        public IActionResult Advertisements_Page(int? id)
+        public IActionResult Advertisements_Page()
         {
-            AdvertsPage advertisements_page = new AdvertsPage(this.db.Cities.ToList(), this.db.Advertisements.ToList());
+            AdvertsPage advertisements_page = new AdvertsPage(db.Cities.ToList(), db.Advertisements.ToList());
             return View(advertisements_page);
         }
 
@@ -62,18 +62,23 @@ namespace NE_LAGAET_CHESTNO.Controllers
                time_of_use != 0)
             {
                 website = website.ToLower();
-                website = website.Substring(0, 1).ToUpper() + (website.Length > 1 ? website.Substring(1) : "");
-                SocialNetwork sn = new SocialNetwork();
-                sn.Name = website.ToLower();
-                db.SocialNetworks.Add(sn);
-                db.SaveChanges();
-
+                website = website.Substring(0, 1).ToUpper() + website.Substring(1);
+                if (db.SocialNetworks.SingleOrDefault(x => x.Name == website) == null)
+                {
+                    SocialNetwork sn = new SocialNetwork();
+                    sn.Name = website;
+                    db.SocialNetworks.Add(sn);
+                    db.SaveChanges();
+                }
                 city = city.ToLower();
-                city = city.Substring(0, 1).ToUpper() + (city.Length > 1 ? city.Substring(1) : "");
-                City City = new City();                
-                City.Name = city.ToLower();
-                db.Cities.Add(City);
-                db.SaveChanges();
+                city = city.Substring(0, 1).ToUpper() + city.Substring(1);
+                if (db.Cities.SingleOrDefault(x => x.Name == city) == null)
+                {
+                    City City = new City();
+                    City.Name = city;
+                    db.Cities.Add(City);
+                    db.SaveChanges();
+                }              
                 Phone phone = new Phone();
                 phone.Brand = brand;
                 phone.Model = model;
@@ -89,44 +94,17 @@ namespace NE_LAGAET_CHESTNO.Controllers
                 db.SaveChanges();
                 Contact contact = new Contact();
                 contact.Account = name;
-                foreach (SocialNetwork item in db.SocialNetworks)
-                {
-                    if (item.Name == sn.Name)
-                    {
-                        contact.SocialNetwork = item;
-                        break;
-                    }
-                }
-                foreach (City item in db.Cities)
-                {
-                    if (item.Name == City.Name)
-                    {
-                        contact.City = item;
-                        break;
-                    }
-                }
+                contact.SocialNetwork = db.SocialNetworks.Single(x => x.Name == website);
+                contact.City = db.Cities.Single(x => x.Name == city);
+
                 db.Contacts.Add(contact);
                 db.SaveChanges();
                 Advertisement advert = new Advertisement();
-                foreach (Phone item in db.Phones)
-                {
-                    if (item == phone)
-                    {
-                        advert.Phone = item;
-                        break;
-                    }
-                }
+                advert.Phone = db.Phones.Single(x => x == phone);
                 advert.Other = other;
                 advert.TimeOfUse = time_of_use;
                 advert.ReplacementPhone = replacement_phone;
-                foreach (Contact item in db.Contacts)
-                {
-                    if (item == contact)
-                    {
-                        advert.Contact = item;
-                        break;
-                    }
-                }
+                advert.Contact = db.Contacts.Single(x => x == contact);
                 advert.DateOfAnnouncement = DateTime.Now;
                 db.Advertisements.Add(advert);
                 db.SaveChanges();
@@ -134,12 +112,17 @@ namespace NE_LAGAET_CHESTNO.Controllers
                 return RedirectToAction("Create_Page");
             }
             else
-                return View(); // сделать сообщение об ошибке           
+                return RedirectToAction("Create_Error");
         }
         public IActionResult Create_Page()
         {
             return View();
         }
+        public IActionResult Create_Error()
+        {
+            return View();
+        }
+
 
         public IActionResult Privacy()
         {
