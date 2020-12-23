@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <a class="title">NE LAGAET CHESTNO</a>
+        <a class="title" asp-controller="Home" asp-action="Advertisements_Page">NE LAGAET CHESTNO</a>
     </header>
     <div class="middle ">
         <div class="navigation">
@@ -45,22 +45,17 @@
                     </div>
                     <div class="advert_description">
                         <p>ОС: @advert.Phone.OS , прошивка: @advert.Phone.Firmware, дисплей: @advert.Phone.Display , ёмкость батареи: @advert.Phone.BatteryCapacity mAh, мощность зарядки: @advert.Phone.ChargePower Вт, ОЗУ: @advert.Phone.RAM GB, ПЗУ: @advert.Phone.ROM GB, цвет: @advert.Phone.Color</p>
-                        @if ((advert.TimeOfUse - (advert.TimeOfUse - 1)) == 1)
+                        @if (advert.Other != null)
                         {
-                            <p>Время пользования: @advert.TimeOfUse месяц</p>
+                            <p>Прочее: @advert.Other</p>
                         }
-                        else if ((advert.TimeOfUse - (advert.TimeOfUse - 2)) == 2 || (advert.TimeOfUse - (advert.TimeOfUse - 3)) == 3 || (advert.TimeOfUse - (advert.TimeOfUse - 4)) == 4)
-                        {
-                            <p>Время пользования: @advert.TimeOfUse месяца</p>
-                            }
-                        else
-                        {
-                            <p>Время пользования: @advert.TimeOfUse месяцев</p>
-                        }
-                        <button id="response">@Html.ActionLink("Откликнуться", "Advertisement_Page", advert.Id)</button>
+                        <p>Время пользования: @advert.TimeOfUse @ViewBag.Monthes[advert.TimeOfUse % 100 > 4 && advert.TimeOfUse % 100 < 20 ? 2 : ViewBag.cases[(advert.TimeOfUse % 10 < 5) ? advert.TimeOfUse % 10 : 5]]</p>
+                        <button id="response"><a asp-controller="Home" asp-action="Advertisement_Page" asp-route-id="@advert.Id">Откликнуться</a></button>
+
+
                     </div>
                 </div>
-             }
+            }
         </div>
     </div>
 </body>

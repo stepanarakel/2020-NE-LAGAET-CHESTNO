@@ -28,6 +28,8 @@ namespace NE_LAGAET_CHESTNO.Controllers
             ViewBag.Phones = db.Phones.ToList();
             ViewBag.Contacts = db.Contacts.ToList();
             ViewBag.Advertisements = db.Advertisements.ToList();
+            ViewBag.cases = new[] { 2, 0, 1, 1, 1, 2 };
+            ViewBag.Monthes = new List<string> { "месяц", "месяца", "месяцев" };
             return View();
         }
 
@@ -41,7 +43,9 @@ namespace NE_LAGAET_CHESTNO.Controllers
             ViewBag.Cities = db.Cities.ToList();
             ViewBag.Phones = db.Phones.ToList();
             ViewBag.Contacts = db.Contacts.ToList();
-            ViewBag.Advertisements = db.Advertisements.ToList();
+            ViewBag.Advertisement = db.Advertisements.Single(x => x.Id == id);
+            ViewBag.cases = new[] { 2, 0, 1, 1, 1, 2 };
+            ViewBag.Monthes = new List<string> { "месяц", "месяца", "месяцев"};
             return View();
         }
 
