@@ -1,45 +1,24 @@
 ﻿@{
-    //ViewData["Title"] = "Home Page";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/advert_page/css/advert_page.css" />
-    <title>NE LAGAET CHESTNO</title>
-</head>
-
-<body>
-    <header>
-        <a class="title" asp-controller="Home" asp-action="Advertisements_Page">NE LAGAET CHESTNO</a>
-    </header>
-    <div class="middle ">
-        <div class="advert">
-            <div class="advert_title">
-                <p>МЕНЯЮ: @ViewBag.Advertisement.Phone.Brand @ViewBag.Advertisement.Phone.Model НА: @ViewBag.Advertisement.ReplacementPhone </p>
-            </div>
-            <div class="advert_description">
-                <p>ОС: @ViewBag.Advertisement.Phone.OS , прошивка: @ViewBag.Advertisement.Phone.Firmware, дисплей: @ViewBag.Advertisement.Phone.Display , ёмкость батареи: @ViewBag.Advertisement.Phone.BatteryCapacity mAh, мощность зарядки: @ViewBag.Advertisement.Phone.ChargePower Вт, ОЗУ: @ViewBag.Advertisement.Phone.RAM GB, ПЗУ: @ViewBag.Advertisement.Phone.ROM GB, цвет: @ViewBag.Advertisement.Phone.Color</p>
-                <p>Время пользования: @ViewBag.Advertisement.TimeOfUse @ViewBag.Monthes[ViewBag.Advertisement.TimeOfUse % 100 > 4 && ViewBag.Advertisement.TimeOfUse % 100 < 20 ? 2 : ViewBag.cases[(ViewBag.Advertisement.TimeOfUse % 10 < 5) ? ViewBag.Advertisement.TimeOfUse % 10 : 5]]</p>
-                @if (ViewBag.Advertisement.Other != null)
-                {
-                    <p>Прочее: @ViewBag.Advertisement.Other</p>
-                }
-                <p>Свяжитесь с @ViewBag.Advertisement.Contact.Account в @ViewBag.Advertisement.Contact.SocialNetwork.Name</p>
-                <button id="response">@Html.ActionLink("Вернуться к объявлениям", "Advertisements_Page")</button>
-            </div>
+<link rel="stylesheet" type="text/css" href="~/css/advert_page/css/advert_page.css" />
+<header>
+    <a class="title" asp-controller="Home" asp-action="Advertisements_Page">NE LAGAET CHESTNO</a>
+</header>
+<div class="middle ">
+    <div class="advert">
+        <div class="advert_title">
+            <p>МЕНЯЮ: @ViewBag.Advertisement.Phone.Brand @ViewBag.Advertisement.Phone.Model НА: @ViewBag.Advertisement.ReplacementPhone </p>
+        </div>
+        <div class="advert_description">
+            <p>ОС: @ViewBag.Advertisement.Phone.OS , прошивка: @ViewBag.Advertisement.Phone.Firmware, дисплей: @ViewBag.Advertisement.Phone.Display , ёмкость батареи: @ViewBag.Advertisement.Phone.BatteryCapacity mAh, мощность зарядки: @ViewBag.Advertisement.Phone.ChargePower Вт, ОЗУ: @ViewBag.Advertisement.Phone.RAM GB, ПЗУ: @ViewBag.Advertisement.Phone.ROM GB, цвет: @ViewBag.Advertisement.Phone.Color</p>
+            <p>Время пользования: @ViewBag.Advertisement.TimeOfUse @ViewBag.Monthes[ViewBag.Advertisement.TimeOfUse % 100 > 4 && ViewBag.Advertisement.TimeOfUse % 100 < 20 ? 2 : ViewBag.cases[(ViewBag.Advertisement.TimeOfUse % 10 < 5) ? ViewBag.Advertisement.TimeOfUse % 10 : 5]]</p>
+            @if (ViewBag.Advertisement.Other != null)
+            {
+                <p>Прочее: @ViewBag.Advertisement.Other</p>
+            }
+            <p>Свяжитесь с @ViewBag.Advertisement.Contact.Account в @ViewBag.Advertisement.Contact.SocialNetwork.Name</p>
+            <button id="response">@Html.ActionLink("Вернуться к объявлениям", "Advertisements_Page")</button>
         </div>
     </div>
-</body>
-
-</html>
-
-@*<div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
+</div>

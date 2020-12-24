@@ -1,40 +1,19 @@
 ﻿@{
-    //ViewData["Title"] = "Home Page";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/info_page/css/info_page.css" />
-    <title>NE LAGAET CHESTNO</title>
-</head>
-
-<body>
-    <header>
-        <a class="title" asp-controller="Home" asp-action="Advertisements_Page">NE LAGAET CHESTNO</a>
-    </header>
-    <div class="middle ">
-        <div class="message">
-            <img src="~/css/info_page/icons/smiled.svg">
-            <p class="text">К сожалению вы что-то пропустили...так что без объявления.</p>
-            <center>
-                <div style="width: max-content;">
-                    <button id="back_to_adverts">@Html.ActionLink("Вернуться к объявлениям", "Advertisements_Page")</button>
-                    <button id="back_to_adverts">@Html.ActionLink("Оставить объявление", "Create_Advert_Page")</button>
-                </div>
-            </center>
-        </div>
+<link rel="stylesheet" type="text/css" href="~/css/info_page/css/info_page.css" />
+<header>
+    <a class="title" asp-controller="Home" asp-action="Advertisements_Page">NE LAGAET CHESTNO</a>
+</header>
+<div class="middle ">
+    <div class="message">
+        <img src="~/css/info_page/icons/sad.svg">
+        <p class="text">К сожалению вы что-то пропустили...так что без объявления.</p>
+        <center>
+            <div style="width: max-content;">
+                <button id="back_to_adverts">@Html.ActionLink("Вернуться к объявлениям", "Advertisements_Page")</button>
+                <button id="back_to_adverts">@Html.ActionLink("Оставить объявление", "Create_Advert_Page")</button>
+            </div>
+        </center>
     </div>
-</body>
-
-</html>
-
-@*<div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
+</div>

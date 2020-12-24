@@ -1,79 +1,58 @@
 ﻿@{
-    //ViewData["Title"] = "Home Page";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/create_advert/css/create_advert.css" />
-    <title>NE LAGAET CHESTNO</title>
-</head>
-
-<body>
-    <header>
-        <a class="title" asp-controller="Home" asp-action="Advertisements_Page">NE LAGAET CHESTNO</a>
-    </header>
-    <form class="middle" method="post">
-        <div class="instruction">
-            <p>Заполните все поля и нажмите ОПУБЛИКОВАТЬ</p>
-            <p>Все поля обязательны, кроме ПРОЧЕЕ!</p>
+<link rel="stylesheet" type="text/css" href="~/css/create_advert/css/create_advert.css" />
+<header>
+    <a class="title" asp-controller="Home" asp-action="Advertisements_Page">NE LAGAET CHESTNO</a>
+</header>
+<form class="middle" method="post">
+    <div class="instruction">
+        <p>Заполните все поля и нажмите ОПУБЛИКОВАТЬ</p>
+        <p>Все поля обязательны, кроме ПРОЧЕЕ!</p>
+    </div>
+    <div class="contact_form">
+        <div class="_title">
+            <p>Контакты</p>
         </div>
-        <div class="contact_form">
-            <div class="_title">
-                <p>Контакты</p>
-            </div>
-            <div class="_description">
-                <input id="website" name="website" type="text" placeholder="Социальня сеть">
-                <input id="name" name="name" type="text" placeholder="Имя/id/nick">
-                <input id="city" name="city" type="text" placeholder="Город">
-            </div>
+        <div class="_description">
+            <input id="website" name="website" type="text" placeholder="Социальня сеть">
+            <input id="name" name="name" type="text" placeholder="Имя/id/nick">
+            <input id="city" name="city" type="text" placeholder="Город">
         </div>
-        <div class="characteristics_form">
-            <div class="_title">
-                <p>Характеристики вашего устройства</p>
-            </div>
-            <div class="_description">
-                <input class="col1" id="brand" name="brand" type="text" placeholder="Производитель">
-                <input class="col2" id="model" name="model" type="text" placeholder="Модель">
-                <input class="col1" id="os" name="os" type="text" placeholder="ОС">
-                <input class="col2" id="firmware" name="firmware" type="text" placeholder="Прошивка">
-                <input class="col1" id="display" name="display" type="text" placeholder="Тип дисплея">
-                <input class="col2" id="color" name="color" type="text" placeholder="Цвет">
-                <input class="col1" id="battery_capacity" name="battery_capacity" type="number" placeholder="Ёмкость батареи">
-                <input class="col2" id="charge_power" name="charge_power" type="number" placeholder="Мощномть зарядка">
-                <input class="col1" id="ram" name="ram" type="number" placeholder="Объём ОЗУ">
-                <input class="col2" id="rom" name="rom" type="number" placeholder="Объём ПЗУ">
-            </div>
+    </div>
+    <div class="characteristics_form">
+        <div class="_title">
+            <p>Характеристики вашего устройства</p>
         </div>
-        <div class="addit_info_form">
-            <div class="_title">
-                <p>Доп Инфа</p>
-            </div>
-            <div class="_description">
-                <textarea id="replacement_phone" name="replacement_phone" type="text" placeholder="На какое устройство вы хотите обменяться"></textarea>
-                <textarea id="other" name="other" type="text" placeholder="Прочее: не обязательно для заполнения"></textarea>
-            </div>
+        <div class="_description">
+            <input class="col1" id="brand" name="brand" type="text" placeholder="Производитель">
+            <input class="col2" id="model" name="model" type="text" placeholder="Модель">
+            <input class="col1" id="os" name="os" type="text" placeholder="ОС">
+            <input class="col2" id="firmware" name="firmware" type="text" placeholder="Прошивка">
+            <input class="col1" id="display" name="display" type="text" placeholder="Тип дисплея">
+            <input class="col2" id="color" name="color" type="text" placeholder="Цвет">
+            <input class="col1" id="battery_capacity" name="battery_capacity" type="number" placeholder="Ёмкость батареи">
+            <input class="col2" id="charge_power" name="charge_power" type="number" placeholder="Мощномть зарядка">
+            <input class="col1" id="ram" name="ram" type="number" placeholder="Объём ОЗУ">
+            <input class="col2" id="rom" name="rom" type="number" placeholder="Объём ПЗУ">
         </div>
-        <div class="final_form">
-            <div class="_title">
-                <p>Финальный штрих</p>
-            </div>
-            <div class="_description">
-                <input id="time_of_use" name="time_of_use" type="number" placeholder="Время пользования (месяцы)">
-                <button id="create" type="submit">ОПУБЛИКОВАТЬ</button>
-            </div>
+    </div>
+    <div class="addit_info_form">
+        <div class="_title">
+            <p>Доп Инфа</p>
         </div>
-    </form>
-</body>
-
-</html>
-
-@*<div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
+        <div class="_description">
+            <textarea id="replacement_phone" name="replacement_phone" type="text" placeholder="На какое устройство вы хотите обменяться"></textarea>
+            <textarea id="other" name="other" type="text" placeholder="Прочее: не обязательно для заполнения"></textarea>
+        </div>
+    </div>
+    <div class="final_form">
+        <div class="_title">
+            <p>Финальный штрих</p>
+        </div>
+        <div class="_description">
+            <input id="time_of_use" name="time_of_use" type="number" placeholder="Время пользования (месяцы)">
+            <button id="create" type="submit">ОПУБЛИКОВАТЬ</button>
+        </div>
+    </div>
+</form>
