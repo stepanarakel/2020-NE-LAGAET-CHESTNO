@@ -45,50 +45,40 @@ namespace NE_LAGAET_CHESTNO.Controllers
         }
 
         [HttpPost]
-        public IActionResult Advertisements_Page(int Id, string request)
+        public JsonResult AdvertSearch(int Id, string request)
         {
-            if (request == null) {
-                ViewBag.SocialNetworks = db.SocialNetworks.ToList();
-                SelectList cities = new SelectList(db.Cities, "Id", "Name", db.Cities.Single(x => x.Id == Id));
-                ViewBag.SelectCities = cities;
-                ViewBag.ListCities = db.Cities.ToList();
-                ViewBag.Phones = db.Phones.ToList();
-                ViewBag.Contacts = db.Contacts.ToList();
+            if (request != null)
+            {
+                var city = db.Cities.ToList();
+                var socialnetworks = db.SocialNetworks.ToList();
+                var phones = db.Phones.ToList();
+                var contacts = db.Contacts.ToList();
                 List<Advertisement> AdvertInCity = new List<Advertisement>();
                 foreach (Advertisement item in db.Advertisements)
                 {
                     if (item.Contact.City.Id == Id)
-                        AdvertInCity.Add(item);
+                        if ((item.Phone.Brand + item.Phone.Model).Replace(" ", "").ToLower().Contains(request.Replace(" ", "").ToLower()))
+                            AdvertInCity.Add(item);
                 }
-                ViewBag.City = db.Cities.Single(x => x.Id == Id).Name;
-                ViewBag.Advertisements = AdvertInCity;
-                ViewBag.cases = new[] { 2, 0, 1, 1, 1, 2 };
-                ViewBag.Monthes = new List<string> { "месяц", "месяца", "месяцев" };
-                return View();
+                var advertsInCity = AdvertInCity;
+                if (advertsInCity.Count == 0)
+                    return Json(new
+                    {
+                        redirectUrl = Url.Action("Page_404", "Home"),
+                        isRedirect = true
+                    });
+                else
+                    return Json(advertsInCity);
             }
             else
             {
-                ViewBag.SocialNetworks = db.SocialNetworks.ToList();
-                SelectList cities = new SelectList(db.Cities, "Id", "Name", db.Cities.Single(x => x.Id == Id));
-                ViewBag.SelectCities = cities;
-                ViewBag.ListCities = db.Cities.ToList();
-                ViewBag.Phones = db.Phones.ToList();
-                ViewBag.Contacts = db.Contacts.ToList();
-                List<Advertisement> AdvertInCity = new List<Advertisement>();
-                foreach (Advertisement item in db.Advertisements)
-                {
-                    if (item.Contact.City.Id == Id)
-                        if ((item.Phone.Brand + item.Phone.Model).Replace(" ","").ToLower().Contains(request.Replace(" ", "").ToLower()))
-                            AdvertInCity.Add(item);
-                }
-                ViewBag.City = db.Cities.Single(x => x.Id == Id).Name;
-                ViewBag.Advertisements = AdvertInCity;
-                ViewBag.cases = new[] { 2, 0, 1, 1, 1, 2 };
-                ViewBag.Monthes = new List<string> { "месяц", "месяца", "месяцев" };
-                if (ViewBag.Advertisements.Count == 0)
-                    return RedirectToAction("Page_404");
-                else
-                    return View();
+                var city = db.Cities.ToList();
+                var socialnetworks = db.SocialNetworks.ToList();
+                var phones = db.Phones.ToList();
+                var contacts = db.Contacts.ToList();
+                var advertsInCity = db.Advertisements.Where(x => x.Contact.City.Id == Id).ToList();
+
+                return Json(advertsInCity);
             }
         }
 
